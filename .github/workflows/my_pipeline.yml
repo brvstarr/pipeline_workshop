@@ -1,0 +1,21 @@
+Name: Cypress Testing Workshop Pipeline
+
+on: workflow_dispatch
+
+jobs:
+  testing:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Run Cypress Tests
+        run: npm run e2e:full
+
+      - name: Upload Cypress results
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: build/cypress
