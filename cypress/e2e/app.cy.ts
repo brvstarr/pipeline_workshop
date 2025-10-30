@@ -6,5 +6,6 @@ describe('Dino Fan Club', () => {
     cy.get('[data-testid="name-input"]').type('Grace');
     cy.get('[data-testid="greeting"]').contains('RAWR, Grace! Welcome to the club.');
     cy.get('[data-testid="facts"] li').its('length').should('be.gte', 1);
+    // comment
   });
 });
